@@ -4,53 +4,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Danh sách kiểu loại</title>
+    <title>Danh sách hình ảnh</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../style.css">
 </head>
 
 <body>
     <?php
-    include_once "../layout/header.php";
+    include_once "../Layout/header.PHP";
     ?>
     <?php
     //Mở kết nối đến DB
     include_once "../../Connection/open.php";
     //Viết sql lấy dữ liệu
-    $sql = "SELECT * FROM types";
+    $sql = "SELECT * FROM images";
     //Chạy query
-    $types = mysqli_query($connection, $sql);
+    $images = mysqli_query($connection, $sql);
     //Đóng kết nối đến DB
     include_once "../../Connection/close.php";
     //Hiển thị dữ liệu
     ?>
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <h2>Danh sách Kiểu Loại</h2>
-            <a href="create.php" class="btn btn-success">Thêm Kiểu Loại</a>
+            <h2>Danh sách hình ảnh</h2>
+            <a href="create.php" class="btn btn-success">Thêm hình ảnh</a>
         </div>
     </div>
     <table class="table table-bordered table-light align-middle">
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Product id</th>
             <th colspan="2">Hành Động</th>
         </tr>
         <?php
-        foreach ($types as $types) {
+        foreach ($images as $images) {
         ?>
             <tr>
                 <td>
-                    <?php echo $types['id']; ?>
+                    <?php echo $images['id']; ?>
                 </td>
                 <td>
-                    <?php echo $types['name']; ?>
+                    <?php echo $images['name']; ?>
                 </td>
                 <td>
-                    <a href="edit.php?id=<?php echo $types['id']; ?>" class="btn btn-sm btn-danger">Edit</a>
+                    <?php echo $images['product_id']; ?>
                 </td>
                 <td>
-                    <a href="destroy.php?id=<?php echo $types['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <a href="edit.php?id=<?php echo $images['id']; ?>" class="btn btn-sm btn-danger">Edit</a>
+                </td>
+                <td>
+                    <a href="destroy.php?id=<?php echo $images['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
                 </td>
             </tr>
         <?php

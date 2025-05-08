@@ -1,14 +1,14 @@
 <?php
-    //Lấy dữ liệu từ form
-    $name = $_POST["name"];
-    //Mở kết nối đến DB
+    //Lấy id
+    $id = $_GET['id'];
+    //Mở kết nối
     include_once "../../Connection/open.php";
     //Viết sql
-    $sql = "INSERT INTO payment_method(name) VALUES ('$name')";
+    $sql = "DELETE FROM images WHERE id = '$id'";
     //Chạy sql
     mysqli_query($connection, $sql);
     //Đóng kết nối
     include_once "../../Connection/close.php";
-    //Quay về danh sách
+    //Quay lại danh sách
     header("Location: index.php");
 ?>

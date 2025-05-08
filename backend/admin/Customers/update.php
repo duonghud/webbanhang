@@ -1,16 +1,16 @@
 <?php
-    //Lấy dữ liệu từ form
+    //Lấy dữ liệu
+    $id = $_POST['id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
     $password = $_POST['password'];
-    $role = $_POST['role'];
     $phone = $_POST['phone'];
     $address = $_POST['address'];
-    //Mở kết nối đến DB
+    //Mở kết nối
     include_once "../../Connection/open.php";
-    //Viết sql
-    $sql = "INSERT INTO admins(name, email, password, role, phone, address) VALUES ('$name', '$email', '$password', '$role', '$phone', '$address')";
-    //Chạy sql
+    //Viết query
+    $sql = "UPDATE customers SET name = '$name', email = '$email', password = '$password', phone = '$phone', address = '$address' WHERE id = '$id'";
+    //Chạy query
     mysqli_query($connection, $sql);
     //Đóng kết nối
     include_once "../../Connection/close.php";

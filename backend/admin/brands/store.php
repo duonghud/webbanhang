@@ -1,6 +1,5 @@
 <?php
     //Lấy dữ liệu từ form
-    $id = $_POST["id"];
     $name = $_POST["name"];
     //Mở kết nối đến DB
     include_once "../../Connection/open.php";
