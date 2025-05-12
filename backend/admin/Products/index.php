@@ -10,41 +10,42 @@
 </head>
 
 <body>
+
     <?php
     include_once "../Layout/header.php";
-
+    ?>
+    <?php
     // Mở kết nối
     include_once "../../Connection/open.php";
-
     // Viết và thực thi truy vấn
     $sql = "SELECT products.*, brands.name AS brand_name, types.name AS type_name 
         FROM products 
         INNER JOIN brands ON brands.id = products.brand_id 
         INNER JOIN types ON types.id = products.type_id";
     $products = mysqli_query($connection, $sql);
-
     // Đóng kết nối
     include_once "../../Connection/close.php";
     ?>
 
-    <div class="container my-5">
+    <div class="container w-40 my-1">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Danh Sách Sản Phẩm</h2>
             <a href="create.php" class="btn btn-success">Thêm Sản Phẩm</a>
         </div>
     </div>
-    <table class="table table-bordered table-light align-middle">
+    <table class="table table-bordered table-light align-center">
         <tr>
             <th>Id</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Material</th>
-            <th>Color</th>
-            <th>Number of flower</th>
-            <th>Description</th>
-            <th>Brand</th>
-            <th>Type</th>
+            <th>Tên sản phẩm</th>
+            <th>Ảnh</th>
+            <th>Số lượng</th>
+            <th>Giá</th>
+            <th>Chất liệu</th>
+            <th>Màu sắc</th>
+            <th>Số lượng hoa</th>
+            <th>Mô tả</th>
+            <th>Thương hiệu</th>
+            <th>Kiểu loại</th>
             <th colspan="2">Hành Động</th>
         </tr>
         <?php
@@ -56,6 +57,13 @@
                 </td>
                 <td>
                     <?php echo $product['name']; ?>
+                </td>
+                <td>
+                    <?php if (!empty($product['image'])): ?>
+                        <img src="path_to_image/<?= $product['image']; ?>" alt="product image">
+                    <?php else: ?>
+                        <p>Không có hình ảnh sản phẩm</p>
+                    <?php endif; ?>
                 </td>
                 <td>
                     <?php echo $product['quantity']; ?>
@@ -93,11 +101,7 @@
         ?>
     </table>
 </body>
-<footer>
-    <?php
-    include_once "../Layout/footer.php";
-    ?>
-</footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </html>

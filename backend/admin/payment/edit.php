@@ -41,8 +41,6 @@
         </form>
     </div>
 
-    <?php include_once "../Layout/footer.php"; ?>
-
     <!-- Bootstrap 5 JS (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

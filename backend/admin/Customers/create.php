@@ -1,54 +1,58 @@
-<!doctype html>
+ <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Thêm khách hàng</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thêm quản trị viên</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
+
 <body>
-    <?php
-        include_once "../Layout/header.PHP";
-    ?>
+  <?php include_once "../Layout/header.php"; ?>
 
-    <div class="container mt-5">
-        <h2 class="mb-4">Thêm khách hàng</h2>
-        <form method="post" action="store.php" class="border p-4 rounded shadow-sm bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="form-container">
+          <h3 class="text-center form-title mb-4"> Thêm khách hàng mới</h3>
+          <form method="post" action="store.php">
             <div class="mb-3">
-                <label for="name" class="form-label">Tên</label>
-                <input type="text" name="name" id="name" class="form-control">
+              <label for="name" class="form-label">Tên khách hàng</label>
+              <input type="text" class="form-control" name="name" id="name" required>
             </div>
 
             <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="text" name="email" id="email" class="form-control">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" name="email" id="email" required>
             </div>
 
             <div class="mb-3">
-                <label for="password" class="form-label">Mật khẩu</label>
-                <input type="password" name="password" id="password" class="form-control">
+              <label for="password" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" name="password" id="password" required>
             </div>
 
             <div class="mb-3">
-                <label for="phone" class="form-label">Số điện thoại</label>
-                <input type="text" name="phone" id="phone" class="form-control">
+              <label for="phone" class="form-label">Số điện thoại</label>
+              <input type="text" class="form-control" name="phone" id="phone">
             </div>
 
-            <div class="mb-3">
-                <label for="address" class="form-label">Địa chỉ</label>
-                <input type="text" name="address" id="address" class="form-control">
+            <div class="mb-4">
+              <label for="address" class="form-label">Địa chỉ</label>
+              <input type="text" class="form-control" name="address" id="address">
             </div>
 
-            <button type="submit" class="btn btn-success">Thêm</button>
-        </form>
+            <div class="text-center">
+              <button type="submit" class="btn btn-success">Thêm khách hàng</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer class="mt-5">
-    <?php
-        include_once "../Layout/footer.php";
-    ?>
-</footer>
+
 </html>

@@ -17,10 +17,10 @@
         }
 
         .login-container {
-            background-color: #ffffff;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 30px 40px;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow:0 6px 20px rgba(0, 0, 0, 0.15);
             width: 100%;
             max-width: 400px;
         }
@@ -63,22 +63,23 @@
             flex: 1;
         }
 
-        button {
-            background-color:rgb(70, 77, 94);
+        button[type="submit"] {
+            background-color: #4f46e5;
             color: white;
         }
 
-        button:hover {
-            background-color:rgb(206, 128, 45);
+        button[type="submit"]:hover {
+            background-color: #4338ca;
+            transform: translateY(-1px);
         }
 
         .reset-button {
-            background-color: rgb(70, 77, 94);
+            background-color: #6b7280;
             color: white;
         }
 
         .reset-button:hover {
-            background-color: #d97706;
+            background-color: #4b5563;
         }
 
         .home-button {

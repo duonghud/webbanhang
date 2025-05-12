@@ -13,10 +13,10 @@
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-6">
-        <h2 class="text-center mb-4">Thêm phương thức thanh toán</h2>
+        <h2 class="text-center mb-4">Thêm ảnh sản phẩm</h2>
         <form method="post" action="store.php" class="border p-4 rounded shadow-sm bg-light">
           <div class="mb-3">
-            <label for="name" class="form-label">Tên phương thức:</label>
+            <label for="name" class="form-label">Tên ảnh:</label>
             <input type="text" class="form-control" name="name" id="name" required>
           </div>
           <div class="text-left">

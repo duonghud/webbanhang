@@ -4,44 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Cập nhập khách hàng</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
+    <?php include_once "../Layout/header.php"; ?>
+
     <?php
-        include_once "../Layout/header.PHP";
-    ?>
-    <?php
-        //Lấy id
+        // Lấy id
         $id = $_GET['id'];
-        //Kết nối db
+        // Kết nối db
         include_once "../../Connection/open.php";
-        //Viết sql
+        // Viết sql
         $sql = "SELECT * FROM customers WHERE id = '$id'";
-        //Chạy sql
+        // Chạy sql
         $customers = mysqli_query($connection, $sql);
-        //Đóng kết nối
+        // Đóng kết nối
         include_once "../../Connection/close.php";
-        //Hiển thị dữ liệu lấy được
     ?>
-    <form method="post" action="update.php">
-        <?php
-            foreach ($customers as $customers) {
-        ?>
-            <label for="id">ID: </label><input type="text" name="id" id="id" readonly value="<?php echo $customers['id']; ?>"><br>
-            <label for="name">Name: </label><input type="text" name="name" id="name" value="<?php echo $customers['name']; ?>"><br>
-            <label for="email">Email: </label><input type="text" name="email" id="email" value="<?php echo $customers['email']; ?>"><br>
-            <label for="password">Password: </label><input type="password" name="password" id="password" value="<?php echo $customers['password']; ?>"><br>
-            <label for="phone">Phone: </label><input type="text" name="phone" id="phone" value="<?php echo $customers['phone']; ?>"><br>
-            <label for="address">Address: </label><input type="text" name="address" id="address" value="<?php echo $customers['address']; ?>"><br>
-        <?php
-            }
-        ?>
-        <button>Cập nhập</button>
-    </form>
+
+    <div class="container my-5">
+        <h2 class="mb-4">Cập nhật khách hàng</h2>
+        <form method="post" action="update.php" class="row g-3">
+            <?php foreach ($customers as $customer) { ?>
+                <div class="col-md-6">
+                    <label for="id" class="form-label">ID</label>
+                    <input type="text" name="id" id="id" readonly value="<?= $customer['id']; ?>" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" name="name" id="name" value="<?= $customer['name']; ?>" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" name="email" id="email" value="<?= $customer['email']; ?>" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" value="<?= $customer['password']; ?>" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" name="phone" id="phone" value="<?= $customer['phone']; ?>" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" name="address" id="address" value="<?= $customer['address']; ?>" class="form-control">
+                </div>
+            <?php } ?>
+
+            <div class="col-12 text-left">
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer>
-    <?php
-        include_once "../Layout/footer.php";
-    ?>
-</footer>
 </html>

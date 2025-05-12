@@ -19,22 +19,22 @@
     <?php
     $id = $_GET['id'];
     include_once "../../Connection/open.php";
-    $sql = "SELECT * FROM brands WHERE id = '$id'";
+    $sql = "SELECT * FROM images WHERE id = '$id'";
     $brands = mysqli_query($connection, $sql);
     include_once "../../Connection/close.php";
     ?>
 
     <div class="container py-5">
-        <h2 class="mb-4">Cập nhật thương hiệu</h2>
+        <h2 class="mb-4">Cập nhật ảnh sản phẩm</h2>
         <form method="post" action="update.php" class="bg-white p-4 rounded shadow-sm">
-            <?php foreach ($brands as $brand) { ?>
+            <?php foreach ($images as $image) { ?>
                 <div class="mb-3">
                     <label for="id" class="form-label">ID:</label>
-                    <input type="text" class="form-control" name="id" id="id" readonly value="<?php echo $brand['id']; ?>">
+                    <input type="text" class="form-control" name="id" id="id" readonly value="<?php echo $image['id']; ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Tên thương hiệu:</label>
-                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $brand['name']; ?>">
+                    <label for="name" class="form-label">Tên ảnh:</label>
+                    <input type="text" class="form-control" name="name" id="name" value="<?php echo $image['name']; ?>">
                 </div>
             <?php } ?>
             <button type="submit" class="btn btn-primary">Cập nhật</button>

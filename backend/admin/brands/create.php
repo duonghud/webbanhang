@@ -19,15 +19,13 @@
             <label for="name" class="form-label">Tên thương hiệu:</label>
             <input type="text" class="form-control" name="name" id="name" required>
           </div>
-          <div class="text-center">
+          <div class="text-left">
             <button type="submit" class="btn btn-success">Thêm</button>
           </div>
         </form>
       </div>
     </div>
   </div>
-
-  <?php include_once "../Layout/footer.php"; ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

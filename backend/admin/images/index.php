@@ -33,24 +33,28 @@
         <table class="table table-bordered table-light align-middle">
             <tr>
                 <th>Id</th>
-                <th>Name</th>
+                <th>Ảnh</th>
+                <th>Sản phẩm</th>
                 <th colspan="2">Hành động</th>
             </tr>
             <?php
-            foreach ($brands as $brand) {
+            foreach ($images as $image) {
             ?>
                 <tr>
                     <td>
-                        <?php echo $brand['id']; ?>
+                        <?php echo $image['id']; ?>
                     </td>
                     <td>
-                        <?php echo $brand['name']; ?>
+                        <?php echo $image['name']; ?>
                     </td>
                     <td>
-                        <a href="edit.php?id=<?php echo $brand['id']; ?>" class="btn btn-sm btn-danger">Edit</a>
+                        <?php echo $image['product_id'] ?>
                     </td>
                     <td>
-                        <a href="destroy.php?id=<?php echo $brand['id']; ?> " class="btn btn-sm btn-danger">Delete</a>
+                        <a href="edit.php?id=<?php echo $image['id']; ?>" class="btn btn-sm btn-danger">Edit</a>
+                    </td>
+                    <td>
+                        <a href="destroy.php?id=<?php echo $image['id']; ?> " class="btn btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
             <?php
