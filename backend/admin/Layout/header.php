@@ -1,9 +1,3 @@
-<?php
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
-echo '' . $page . '';
-?>
-
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -30,13 +24,12 @@ echo '' . $page . '';
       position: fixed;
       top: 0;
       left: 0;
-      width: 250px;
+      width: 129px;
       height: 100vh;
       background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
       color: #f8f9fc;
       z-index: 999;
     }
-
 
     #sidebar.collapsed {
       margin-left: -250px;
@@ -67,7 +60,6 @@ echo '' . $page . '';
       color: #ffffff;
     }
 
-
     .sidebar-header {
       font-size: 1.25rem;
       font-weight: 600;
@@ -77,19 +69,6 @@ echo '' . $page . '';
 
     .sidebar hr {
       border-top: 1px solid #4b5563;
-    }
-
-    .toggle-btn {
-      background-color: #e5e7eb;
-      color: #1f2937;
-      font-weight: bold;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-    }
-
-    .toggle-btn:hover {
-      background-color: #d1d5db;
     }
 
     .dropdown-item {
@@ -116,8 +95,6 @@ echo '' . $page . '';
       <li><a href="../Admins/index.php" class="nav-link"><i class="bi bi-shield-lock"></i> Quản trị viên</a></li>
       <li><a href="../Customers/index.php" class="nav-link"><i class="bi bi-people"></i> Khách hàng</a></li>
       <li><a href="../Products/index.php" class="nav-link"><i class="bi bi-box-seam"></i> Sản phẩm</a></li>
-      <li><a href="../image/index.php" class="nav-link"><i class="bi bi-image"></i> Hình ảnh</a></li>
-
     </ul>
     <hr>
     <a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a>
@@ -125,7 +102,14 @@ echo '' . $page . '';
 
   <!-- Main Content -->
   <div id="content" class="p-4">
+    <!-- Toggle Button -->
+    <!-- Page Content -->
+    <div class="card">
+      
+    </div>
   </div>
+
+  </script>
 
 </body>
 
