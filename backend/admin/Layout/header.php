@@ -1,9 +1,3 @@
-<?php
-$page = isset($_GET['page']) ? $_GET['page'] : 'home';
-
-echo '' . $page . '';
-?>
-
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -30,13 +24,12 @@ echo '' . $page . '';
       position: fixed;
       top: 0;
       left: 0;
-      width: 250px;
+      width: 200px;
       height: 100vh;
       background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
       color: #f8f9fc;
       z-index: 999;
     }
-
 
     #sidebar.collapsed {
       margin-left: -250px;
@@ -67,7 +60,6 @@ echo '' . $page . '';
       color: #ffffff;
     }
 
-
     .sidebar-header {
       font-size: 1.25rem;
       font-weight: 600;
@@ -79,26 +71,13 @@ echo '' . $page . '';
       border-top: 1px solid #4b5563;
     }
 
-    .toggle-btn {
-      background-color: #e5e7eb;
-      color: #1f2937;
-      font-weight: bold;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 6px;
-    }
-
-    .toggle-btn:hover {
-      background-color: #d1d5db;
-    }
-
     .dropdown-item {
       color: #d1d5db;
     }
 
     .dropdown-item:hover {
       color: #fff;
-      background-color: #374151;
+      background-color:rgb(20, 96, 227);
     }
   </style>
 </head>
@@ -116,16 +95,33 @@ echo '' . $page . '';
       <li><a href="../Admins/index.php" class="nav-link"><i class="bi bi-shield-lock"></i> Quản trị viên</a></li>
       <li><a href="../Customers/index.php" class="nav-link"><i class="bi bi-people"></i> Khách hàng</a></li>
       <li><a href="../Products/index.php" class="nav-link"><i class="bi bi-box-seam"></i> Sản phẩm</a></li>
-      <li><a href="../image/index.php" class="nav-link"><i class="bi bi-image"></i> Hình ảnh</a></li>
-
     </ul>
     <hr>
-    <a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-right"></i> Đăng xuất</a>
+    <a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-left"></i>Đăng xuất</a>
   </div>
 
   <!-- Main Content -->
   <div id="content" class="p-4">
+    <!-- Toggle Button -->
+     <button class="btn btn-secondary mb-3" id="toggleSidebar">
+      <i class="bi bi-list"></i>
+    </button>
+    <!-- Page Content -->
+    <div class="card">
+      
+    </div>
   </div>
+
+    <script>
+    const toggleBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      content.classList.toggle('full-width');
+    });
+  </script>
 
 </body>
 

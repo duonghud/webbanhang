@@ -28,16 +28,18 @@ if (!file_exists($imagePath) || empty($product['image'])) {
 
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <title>Chi tiết sản phẩm</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<header class="bg-white shadow p-4 flex justify-between items-center">
-        <?php
-        include_once "../layout/header.php";
-        ?>
-    </header>
+<header>
+    <?php
+    include_once "../layout/header.php";
+    ?>
+</header>
+
 <body class="bg-gray-100">
     <div class="max-w-4xl mx-auto py-10 px-6">
         <?php if ($product): ?>
@@ -51,7 +53,7 @@ if (!file_exists($imagePath) || empty($product['image'])) {
                     <p class="text-gray-600 mb-2"><strong>Màu sắc:</strong> <?= htmlspecialchars($product['color']) ?></p>
                     <p class="text-gray-600 mb-2"><strong>Số lượng hoa:</strong> <?= (int)$product['number_of_flower'] ?></p>
                     <p class="text-gray-600 mb-4"><strong>Mô tả:</strong> <?= nl2br(htmlspecialchars($product['description'])) ?></p>
-                    <a href="product-list.php" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-800">← Quay lại danh sách</a>
+                    <a href="index.php" class="inline-block bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-800">← Quay lại danh sách</a>
                 </div>
             </div>
         <?php else: ?>
@@ -59,9 +61,10 @@ if (!file_exists($imagePath) || empty($product['image'])) {
         <?php endif; ?>
     </div>
 </body>
-<footer class="bg-gray-800 text-white py-6 mt-12 text-center">
-        <?php
-        include_once "../layout/footer.php";
-        ?>
-    </footer>
+<footer class="mt-5">
+    <?php
+    include_once "../layout/footer.php";
+    ?>
+</footer>
+
 </html>

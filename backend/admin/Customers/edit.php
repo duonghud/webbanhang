@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,21 +9,30 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../../../style.css">
 </head>
+
 <body>
     <?php include_once "../Layout/header.php"; ?>
 
     <?php
-        // Lấy id
-        $id = $_GET['id'];
-        // Kết nối db
-        include_once "../../Connection/open.php";
-        // Viết sql
-        $sql = "SELECT * FROM customers WHERE id = '$id'";
-        // Chạy sql
-        $customers = mysqli_query($connection, $sql);
-        // Đóng kết nối
-        include_once "../../Connection/close.php";
+    // Lấy id
+    $id = $_GET['id'];
+    // Kết nối db
+    include_once "../../Connection/open.php";
+    // Viết sql
+    $sql = "SELECT * FROM customers WHERE id = '$id'";
+    // Chạy sql
+    $customers = mysqli_query($connection, $sql);
+    // Đóng kết nối
+    include_once "../../Connection/close.php";
     ?>
+
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách khách hàng</a> <a href="#" class="text-dark">> Cập nhập khách hàng</a>
+            </p>
+        </div>
+    </div>
 
     <div class="container my-5">
         <h2 class="mb-4">Cập nhật khách hàng</h2>
@@ -68,4 +78,5 @@
     <!-- Bootstrap 5 JS Bundle (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

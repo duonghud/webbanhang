@@ -1,7 +1,7 @@
 <?php
 //Lấy dữ liệu từ form
 $name = $_POST['name'];
-$images =$_FILES['image']['name'];
+//$images =$_FILES['image']['name'];
 $quantity = $_POST['quantity'];
 $price = $_POST['price'];
 $material = $_POST['material'];
@@ -13,7 +13,7 @@ $type_id = $_POST['type_id'];
 //Mở kết nối đến DB
 include_once "../../Connection/open.php";
 //Viết sql
-$sql = "INSERT INTO products(name, image, quantity, price, material, color, number_of_flower, description, brand_id, type_id) VALUES ('$name', '$images', '$quantity', '$price', '$material', '$color', '$number_of_flower', '$description', '$brand_id', '$type_id')";
+$sql = "INSERT INTO products(name,  quantity, price, material, color, number_of_flower, description, brand_id, type_id) VALUES ('$name', '$quantity', '$price', '$material', '$color', '$number_of_flower', '$description', '$brand_id', '$type_id')";
 //Chạy sql
 mysqli_query($connection, $sql);
 //Đóng kết nối

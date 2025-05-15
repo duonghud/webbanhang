@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,6 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <?php include_once "../layout/header.php"; ?>
 
@@ -25,8 +27,15 @@
     $products = mysqli_query($connection, $sqlProduct);
     // Đóng kết nối
     include_once "../../Connection/close.php";
-?>
+    ?>
 
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách sản phẩm</a> <a href="#" class="text-dark">> Cập nhập sản phẩm mới</a>
+            </p>
+        </div>
+    </div>
 
     <div class="container my-5">
         <h2 class="mb-4">Cập nhật sản phẩm</h2>
@@ -40,9 +49,9 @@
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" id="name" value="<?= $product['name']; ?>" class="form-control">
                 </div>
-                
-                <label for="image" class="form-label">Image: <img src="../image/<?php echo $product["image"]?>" class="form-control"> </label>
-                <input type="file" name="image" id="image"><br>
+
+          <!--     <label for="image" class="form-label">Image: <img src="../image/<?php echo $product["image"] ?>" class="form-control"> </label>
+                <input type="file" name="image" id="image"><br> -->
 
                 <div class="col-md-6">
                     <label for="quantity" class="form-label">Quantity</label>
@@ -73,50 +82,48 @@
                     <input type="text" name="brand_id" id="brand_id" readonly value="<?= $product['brand_id']; ?>" class="form-control">
                 </div>
                 <select id="brand_id" name="brand_id">
-                <?php
-                foreach ($brands as $brand) {
-                    ?>
-                    <option value="<?php echo $brand["id"]; ?>"
-                        <?php
-                            if($brand["id"] == $product["brand_id"]){
-                        ?>
-                            selected="selected"
-                        <?php
-                            }
-                        ?>
-                    >
-                        <?php echo $brand["name"]; ?>
-                    </option>
                     <?php
-                }
-                ?>
-            </select><br>
+                    foreach ($brands as $brand) {
+                    ?>
+                        <option value="<?php echo $brand["id"]; ?>"
+                            <?php
+                            if ($brand["id"] == $product["brand_id"]) {
+                            ?>
+                            selected="selected"
+                            <?php
+                            }
+                            ?>>
+                            <?php echo $brand["name"]; ?>
+                        </option>
+                    <?php
+                    }
+                    ?>
+                </select><br>
                 <div class="col-md-6">
                     <label for="type_id" class="form-label">Type</label>
                     <input type="text" name="type_id" id="type_id" readonly value="<?= $product['type_id']; ?>" class="form-control">
                 </div>
                 <select id="type_id" name="type_id">
-                <?php
-                foreach ($types as $type) {
-                    ?>
-                    <option value="<?php echo $type["id"]; ?>"
-                        <?php
-                            if($type["id"] == $product["type_id"]){
-                        ?>
-                            selected="selected"
-                        <?php
-                            }
-                        ?>
-                    >
-                        <?php echo $brand["name"]; ?>
-                    </option>
                     <?php
-                }
-                ?>
-            </select><br>
+                    foreach ($types as $type) {
+                    ?>
+                        <option value="<?php echo $type["id"]; ?>"
+                            <?php
+                            if ($type["id"] == $product["type_id"]) {
+                            ?>
+                            selected="selected"
+                            <?php
+                            }
+                            ?>>
+                            <?php echo $brand["name"]; ?>
+                        </option>
+                    <?php
+                    }
+                    ?>
+                </select><br>
 
-            <?php 
-                } 
+            <?php
+            }
             ?>
 
             <div class="col-12">
@@ -128,4 +135,5 @@
     <!-- Bootstrap 5 JS Bundle (with Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

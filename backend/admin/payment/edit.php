@@ -24,8 +24,16 @@
     include_once "../../Connection/close.php";
     ?>
 
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách phương thức thanh toán</a> <a href="#" class="text-dark">> Cập nhập phương thức thanh toán</a>
+            </p>
+        </div>
+    </div>
+
     <div class="container py-5">
-        <h2 class="mb-4">Cập nhật thương hiệu</h2>
+        <h2 class="mb-4">Cập nhật phương thức thanh toán</h2>
         <form method="post" action="update.php" class="bg-white p-4 rounded shadow-sm">
             <?php foreach ($payment_method as $payment_method) { ?>
                 <div class="mb-3">

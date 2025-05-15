@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,18 +9,27 @@
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body class="bg-light">
     <?php include_once "../Layout/header.PHP"; ?>
+
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách quản trị viên</a> <a href="#" class="text-dark">> Cập nhập quản trị viên</a>
+            </p>
+        </div>
+    </div>
 
     <div class="container my-5">
         <h2 class="mb-4">Cập nhập quản trị viên</h2>
 
         <?php
-            $id = $_GET['id'];
-            include_once "../../Connection/open.php";
-            $sql = "SELECT * FROM admins WHERE id = '$id'";
-            $admins = mysqli_query($connection, $sql);
-            include_once "../../Connection/close.php";
+        $id = $_GET['id'];
+        include_once "../../Connection/open.php";
+        $sql = "SELECT * FROM admins WHERE id = '$id'";
+        $admins = mysqli_query($connection, $sql);
+        include_once "../../Connection/close.php";
         ?>
 
         <form method="post" action="update.php" class="row g-3">
@@ -71,4 +81,5 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

@@ -10,6 +10,14 @@
 <body>
   <?php include_once "../Layout/header.php"; ?>
 
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách thương hiệu</a> <a href="#" class="text-dark">> Thêm thương hiệu</a>
+            </p>
+        </div>
+    </div>
+
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-md-6">

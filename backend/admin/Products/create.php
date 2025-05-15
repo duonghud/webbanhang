@@ -19,6 +19,14 @@
   include_once "../../Connection/close.php";
   ?>
 
+  <div class="container w-40 my-1">
+    <div class="d-flex justify-content-between align-items-left mb-4">
+      <p>
+        <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách sản phẩm</a> <a href="#" class="text-dark">> Thêm sản phẩm mới</a>
+      </p>
+    </div>
+  </div>
+
   <div class="container my-5">
     <div class="row justify-content-center">
       <div class="col-lg-8">
@@ -28,19 +36,19 @@
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="name" class="form-label">Tên sản phẩm</label>
-                <input type="text" class="form-control" id="name" name="name" required>
+                <input type="text" class="form-control" id="name" name="name">
               </div>
-              <div class="col-md-6 mb-3">
+            <!--  <div class="col-md-6 mb-3">
                 <label for="image" class="form-label">Ảnh</label>
-                <input type="file" class="form-control" id="image" name="image" required>
-              </div>
+                <input type="file" class="form-control" id="image" name="image" >
+              </div> -->
               <div class="col-md-6 mb-3">
                 <label for="quantity" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" id="quantity" name="quantity" required>
+                <input type="number" class="form-control" id="quantity" name="quantity" >
               </div>
               <div class="col-md-6 mb-3">
                 <label for="price" class="form-label">Giá</label>
-                <input type="number" class="form-control" id="price" name="price" required>
+                <input type="number" class="form-control" id="price" name="price" >
               </div>
               <div class="col-md-6 mb-3">
                 <label for="material" class="form-label">Chất liệu</label>

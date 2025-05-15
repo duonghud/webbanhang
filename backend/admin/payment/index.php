@@ -23,6 +23,14 @@
     // Đóng kết nối đến DB
     include_once "../../Connection/close.php";
     ?>
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách phương thức thanh toán</a>
+            </p>
+        </div>
+    </div>
+
 
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -30,7 +38,7 @@
             <a href="create.php" class="btn btn-success"> Thêm phương thức</a>
         </div>
 
-        <div class="table-responsive">
+        <div class="table-responsive" style="max-width: 1150px; margin: auto;">
             <table class="table table-bordered table-light align-middle">
                 <thead class="table-light">
                     <tr>

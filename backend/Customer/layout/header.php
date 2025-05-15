@@ -139,7 +139,7 @@
       <!-- Left side: Logo + Menu -->
       <div class="d-flex align-items-center gap-4">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/logo-flower.png" alt="Logo" /> bloom
+          <img src="logo.png" alt="Logo" />
         </a>
         <ul class="navbar-nav d-flex flex-row gap-4">
           <li class="nav-item"><a class="nav-link nav-link-custom active" href="#">Trang Chủ</a></li>

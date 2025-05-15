@@ -24,39 +24,44 @@
     include_once "../../Connection/close.php";
     //Hiển thị dữ liệu
     ?>
+
+    <div class="container w-40 my-1">
+        <div class="d-flex justify-content-between align-items-left mb-4">
+            <p>
+                <a href="#" class="text-dark">Trang chủ</a> <a href="#" class="text-dark">> Danh sách thương hiệu</a>
+            </p>
+        </div>
+    </div>
+
     <div class="container my-5">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2>Danh sách thương hiệu</h2>
             <a href="create.php" class="btn btn-success">Thêm Thương Hiệu</a>
         </div>
     </div>
-        <table class="table table-bordered table-light align-middle">
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th colspan="2">Hành động</th>
-            </tr>
-            <?php
-            foreach ($brands as $brand) {
-            ?>
+    <div class="table-responsive" style="max-width: 1200px; margin: auto;">
+        <table class="table table-bordered table-light align-middle table-sm-custom">
+            <thead>
                 <tr>
-                    <td>
-                        <?php echo $brand['id']; ?>
-                    </td>
-                    <td>
-                        <?php echo $brand['name']; ?>
-                    </td>
-                    <td>
-                        <a href="edit.php?id=<?php echo $brand['id']; ?>" class="btn btn-sm btn-danger">Edit</a>
-                    </td>
-                    <td>
-                        <a href="destroy.php?id=<?php echo $brand['id']; ?> " class="btn btn-sm btn-danger">Delete</a>
-                    </td>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th colspan="2">Hành động</th>
                 </tr>
-            <?php
-            }
-            ?>
+            </thead>
+            <tbody>
+                <?php foreach ($brands as $brand): ?>
+                    <tr>
+                        <td><?= $brand['id']; ?></td>
+                        <td><?= $brand['name']; ?></td>
+                        <td><a href="edit.php?id=<?= $brand['id']; ?>" class="btn btn-sm btn-danger">Edit</a></td>
+                        <td><a href="destroy.php?id=<?= $brand['id']; ?>" class="btn btn-sm btn-danger">Delete</a></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
+    </div>
+
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
