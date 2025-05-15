@@ -77,7 +77,7 @@
         <tr>
           <th>Id</th>
           <th>Tên sản phẩm</th>
-          <th>Ảnh</th>
+          <!-- <th>Ảnh</th> -->
           <th>Số lượng</th>
           <th>Giá</th>
           <th>Chất liệu</th>
@@ -98,9 +98,9 @@
           <td>
             <?= $product['name']; ?>
           </td>
-          <td>
+          <!-- <td>
             <img src="../image/<?php echo $product["image"] ?>" alt="product image">
-          </td>
+          </td> -->
           <td>
             <?= $product['quantity']; ?>
           </td>
@@ -132,7 +132,9 @@
             <a href="destroy.php?id=<?= $product['id']; ?>" class="btn btn-sm btn-danger">Delete</a>
           </td>
         </tr>
-        <?php
+      </tbody>
+    </table>
+    <?php
         for ($page = 1; $page <= $pages; $page++) {
           if ($keyword == "") {
         ?>
@@ -149,8 +151,6 @@
           }
         }
         ?>
-      </tbody>
-    </table>
   </div>
 
 </body>
