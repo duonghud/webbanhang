@@ -93,13 +93,13 @@
 <body>
   <?php
   session_start();
-  if (isset($_SESSION['admin_email'])) {
-    header('Location:index.php');
+  if (isset($_SESSION['customers_email'])) {
+    header('Location:list.php');
     exit;
   }
   ?>
   <div class="login-container">
-    <h2>Admin Login</h2>
+    <h2>Đăng Nhập</h2>
     <form method="post" action="login-process.php">
       <label for="email">Email:</label>
       <input type="email" name="email" id="email" required>
@@ -111,8 +111,16 @@
         <button type="submit">Login</button>
         <button type="reset" class="reset-button">Reset</button>
       </div>
+
+      <p style="text-align: center; margin-top: 20px; color: #fff;">
+        Bạn chưa có tài khoản?
+        <a href="register.php" style="color: #c7d2fe; font-weight: bold; text-decoration: underline;">
+          Đăng ký
+        </a>
+      </p>
     </form>
   </div>
+
 </body>
 
 </html>

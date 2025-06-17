@@ -38,17 +38,17 @@
                 <label for="name" class="form-label">Tên sản phẩm</label>
                 <input type="text" class="form-control" id="name" name="name">
               </div>
-            <!--  <div class="col-md-6 mb-3">
-                <label for="image" class="form-label">Ảnh</label>
-                <input type="file" class="form-control" id="image" name="image" >
-              </div> -->
               <div class="col-md-6 mb-3">
-                <label for="quantity" class="form-label">Số lượng</label>
-                <input type="number" class="form-control" id="quantity" name="quantity" >
+                <label for="image" class="form-label">Ảnh</label>
+                <input type="file" class="form-control" id="image" name="image">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="quantity" class="form-label">Số lượng hàng</label>
+                <input type="number" class="form-control" id="quantity" name="quantity">
               </div>
               <div class="col-md-6 mb-3">
                 <label for="price" class="form-label">Giá</label>
-                <input type="number" class="form-control" id="price" name="price" >
+                <input type="number" class="form-control" id="price" name="price">
               </div>
               <div class="col-md-6 mb-3">
                 <label for="material" class="form-label">Chất liệu</label>
@@ -70,7 +70,9 @@
                 <label for="brand_id" class="form-label">Thương hiệu</label>
                 <select class="form-select" id="brand_id" name="brand_id">
                   <?php foreach ($brands as $brand) { ?>
-                    <option value="<?= $brand["id"]; ?>"><?= $brand["name"]; ?></option>
+                    <option value="<?= $brand["id"]; ?>">
+                      <?= $brand["name"]; ?>
+                    </option>
                   <?php } ?>
                 </select>
               </div>
@@ -78,7 +80,9 @@
                 <label for="type_id" class="form-label">Kiểu loại</label>
                 <select class="form-select" id="type_id" name="type_id">
                   <?php foreach ($types as $type) { ?>
-                    <option value="<?= $type["id"]; ?>"><?= $type["name"]; ?></option>
+                    <option value="<?= $type["id"]; ?>">
+                      <?= $type["name"]; ?>
+                    </option>
                   <?php } ?>
                 </select>
               </div>

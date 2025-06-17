@@ -20,28 +20,38 @@
       background-color: #f1f5f9;
     }
 
+    /* Sidebar (overlay style) */
     #sidebar {
       position: fixed;
       top: 0;
       left: 0;
-      width: 200px;
+      width: 250px;
       height: 100vh;
       background: linear-gradient(180deg, #4e73df 0%, #224abe 100%);
       color: #f8f9fc;
       z-index: 999;
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      padding: 20px;
     }
 
-    #sidebar.collapsed {
-      margin-left: -250px;
+    #sidebar.active {
+      transform: translateX(0);
     }
 
-    #content {
-      transition: margin-left 0.3s ease;
-      margin-left: 250px;
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 998;
+      display: none;
     }
 
-    #content.full-width {
-      margin-left: 0;
+    #overlay.active {
+      display: block;
     }
 
     .nav-link {
@@ -67,25 +77,29 @@
       margin-bottom: 20px;
     }
 
-    .sidebar hr {
-      border-top: 1px solid #4b5563;
-    }
-
     .dropdown-item {
       color: #d1d5db;
     }
 
     .dropdown-item:hover {
       color: #fff;
-      background-color:rgb(20, 96, 227);
+      background-color: rgb(20, 96, 227);
     }
   </style>
 </head>
 
 <body>
 
+  <!-- Toggle button -->
+  <button id="toggleSidebar" class="btn btn-primary m-3">
+    <i class="bi bi-list"></i>
+  </button>
+
+  <!-- Overlay -->
+  <div id="overlay" onclick="closeSidebar()"></div>
+
   <!-- Sidebar -->
-  <div id="sidebar" class="d-flex flex-column position-fixed p-3">
+  <div id="sidebar" class="d-flex flex-column position-fixed">
     <div class="sidebar-header">Quản trị viên</div>
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
@@ -95,32 +109,32 @@
       <li><a href="../Admins/index.php" class="nav-link"><i class="bi bi-shield-lock"></i> Quản trị viên</a></li>
       <li><a href="../Customers/index.php" class="nav-link"><i class="bi bi-people"></i> Khách hàng</a></li>
       <li><a href="../Products/index.php" class="nav-link"><i class="bi bi-box-seam"></i> Sản phẩm</a></li>
+      <li><a href="../CartAdmin/index.php" class="nav-link"><i class="bi bi-bag"></i> Giỏ hàng</a></li>
+      <li><a href="../Order/index.php" class="nav-link"><i class="bi bi-tags"></i> Đơn hàng</a></li>
     </ul>
     <hr>
-    <a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-left"></i>Đăng xuất</a>
+    <a class="dropdown-item" href="../logout.php"><i class="bi bi-box-arrow-left"></i> Đăng xuất</a>
   </div>
 
   <!-- Main Content -->
-  <div id="content" class="p-4">
-    <!-- Toggle Button -->
-     <button class="btn btn-secondary mb-3" id="toggleSidebar">
-      <i class="bi bi-list"></i>
-    </button>
-    <!-- Page Content -->
-    <div class="card">
-      
-    </div>
+  <div class="container mt-5">
   </div>
 
-    <script>
-    const toggleBtn = document.getElementById('toggleSidebar');
+  <!-- Script -->
+  <script>
     const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
+    const overlay = document.getElementById('overlay');
+    const toggleBtn = document.getElementById('toggleSidebar');
 
     toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('collapsed');
-      content.classList.toggle('full-width');
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
     });
+
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+    }
   </script>
 
 </body>

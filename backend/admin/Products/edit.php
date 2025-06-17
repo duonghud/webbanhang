@@ -49,10 +49,10 @@
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" id="name" value="<?= $product['name']; ?>" class="form-control">
                 </div>
-
-          <!--     <label for="image" class="form-label">Image: <img src="../image/<?php echo $product["image"] ?>" class="form-control"> </label>
-                <input type="file" name="image" id="image"><br> -->
-
+                <div class="col-md-6">
+                    <label for="image">Image: <img src="../image/<?php echo $product["image"] ?>"> </label>
+                    <input type="file" name="image" id="image" class="form-control">
+                </div>
                 <div class="col-md-6">
                     <label for="quantity" class="form-label">Quantity</label>
                     <input type="text" name="quantity" id="quantity" value="<?= $product['quantity']; ?>" class="form-control">
@@ -100,7 +100,7 @@
                     ?>
                 </select><br>
                 <div class="col-md-6">
-                    <label for="type_id" class="form-label">Type</label>
+                    <label for="type_id" class="form-label">Kiểu loại</label>
                     <input type="text" name="type_id" id="type_id" readonly value="<?= $product['type_id']; ?>" class="form-control">
                 </div>
                 <select id="type_id" name="type_id">
@@ -115,7 +115,7 @@
                             <?php
                             }
                             ?>>
-                            <?php echo $brand["name"]; ?>
+                            <?php echo $type["name"]; ?>
                         </option>
                     <?php
                     }

@@ -1,19 +1,19 @@
 <?php
 //Lấy dữ liệu từ form
 $name = $_POST['name'];
-//$images =$_FILES['image']['name'];
+$image =$_FILES['image']['name'];
 $quantity = $_POST['quantity'];
 $price = $_POST['price'];
 $material = $_POST['material'];
 $color = $_POST['color'];
 $number_of_flower = $_POST['number_of_flower'];
 $description = $_POST['description'];
-$brand_id = $_POST['brand_id'];
-$type_id = $_POST['type_id'];
+$brands_id = $_POST['brand_id'];
+$types_id = $_POST['type_id'];
 //Mở kết nối đến DB
 include_once "../../Connection/open.php";
 //Viết sql
-$sql = "INSERT INTO products(name,  quantity, price, material, color, number_of_flower, description, brand_id, type_id) VALUES ('$name', '$quantity', '$price', '$material', '$color', '$number_of_flower', '$description', '$brand_id', '$type_id')";
+$sql = "INSERT INTO products(name, image, quantity, price, material, color, number_of_flower, description, brand_id, type_id) VALUES ('$name', '$image', '$quantity', '$price', '$material', '$color', '$number_of_flower', '$description', '$brands_id', '$types_id')";
 //Chạy sql
 mysqli_query($connection, $sql);
 //Đóng kết nối

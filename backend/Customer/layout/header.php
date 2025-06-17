@@ -118,7 +118,8 @@
       border-radius: 12px;
       padding: 0.6rem 1rem;
       border: 1px solid #c65f9b;
-      width: 180px; /* Reduced width */
+      width: 180px;
+      /* Reduced width */
     }
 
     /* Search icon inside the input */
@@ -138,11 +139,11 @@
 
       <!-- Left side: Logo + Menu -->
       <div class="d-flex align-items-center gap-4">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../product/list.php">
           <img src="logo.png" alt="Logo" />
         </a>
         <ul class="navbar-nav d-flex flex-row gap-4">
-          <li class="nav-item"><a class="nav-link nav-link-custom active" href="#">Trang Chủ</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-custom active" href="../product/list.php">Trang Chủ</a></li>
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Cửa Hàng</a></li>
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Giới Thiệu Về Chúng Tôi</a></li>
           <li class="nav-item"><a class="nav-link nav-link-custom" href="#">Bài Viết</a></li>
@@ -161,8 +162,20 @@
 
       <!-- Right side: Icons -->
       <div class="d-flex align-items-center gap-3">
-        <button class="icon-btn"><i class="bi bi-person"></i></button>
-        <button class="icon-btn"><i class="bi bi-cart"></i></button>
+        <button></i>
+          <a href="../account/profile.php" class="icon-btn">
+            <i class="bi bi-person"></i>
+            </a>
+        </button>
+        <button>
+          <a href="../Cart/index.php" class="icon-btn">
+            <i class="bi bi-cart"></i>
+          </a></button>
+        <button>
+          <a href="../Oder/oderList.php" class="icon-btn">
+            <i class="bi bi-truck"></i>
+          </a>
+        </button>
       </div>
 
     </div>

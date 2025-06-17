@@ -54,11 +54,6 @@
                 </div>
 
                 <div class="col-md-6">
-                    <label for="password" class="form-label">Password</label>
-                    <input type="password" name="password" id="password" value="<?= $customer['password']; ?>" class="form-control">
-                </div>
-
-                <div class="col-md-6">
                     <label for="phone" class="form-label">Phone</label>
                     <input type="text" name="phone" id="phone" value="<?= $customer['phone']; ?>" class="form-control">
                 </div>

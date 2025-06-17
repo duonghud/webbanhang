@@ -41,7 +41,7 @@
                     <input type="text" class="form-control" name="id" id="id" readonly value="<?php echo $payment_method['id']; ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="name" class="form-label">Tên thương hiệu:</label>
+                    <label for="name" class="form-label">Tên phương thức:</label>
                     <input type="text" class="form-control" name="name" id="name" value="<?php echo $payment_method['name']; ?>">
                 </div>
             <?php } ?>

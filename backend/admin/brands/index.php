@@ -39,7 +39,7 @@
             <a href="create.php" class="btn btn-success">Thêm Thương Hiệu</a>
         </div>
     </div>
-    <div class="table-responsive" style="max-width: 1200px; margin: auto;">
+    <div class="table-responsive">
         <table class="table table-bordered table-light align-middle table-sm-custom">
             <thead>
                 <tr>
